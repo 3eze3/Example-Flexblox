@@ -1,0 +1,63 @@
+.main__wrapper {
+  width: 100%;
+  height: calc(100vh - 14.75rem);
+  padding-inline: 3rem;
+  margin-top: 1.6rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.main__box {
+  width: 10rem;
+  height: 10rem;
+  background-color: #fbfbfb;
+  box-shadow: 0.5rem 0.5rem 0.4rem rgba(0, 0, 0, 0.166) inset, -0.2rem -0.2rem 0.4rem rgba(0, 0, 0, 0.211) inset;
+  text-align: center;
+  line-height: 10rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+.main__subtitle {
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 1000;
+  position: absolute;
+  overflow: hidden;
+}
+.main__propertys {
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: absolute;
+  top: 1rem;
+  left: 10rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+}
+.main__change {
+  font-size: 1.5em;
+}
+.main__description {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #dca500;
+}
+
+/*# sourceMappingURL=section_box.css.map */
