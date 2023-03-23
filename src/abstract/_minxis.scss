@@ -1,0 +1,20 @@
+@mixin flex(
+  $aling: center,
+  $justify: center,
+  $direction: column,
+  $flow: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $flow;
+  justify-content: $justify;
+  align-items: $aling;
+  gap: 3rem;
+}
+@mixin transition($property, $time: 0.2s, $function: ease) {
+  transition: $property $time $function;
+  -webkit-transition: $property $time $function;
+  -moz-transition: $property $time $function;
+  -ms-transition: $property $time $function;
+  -o-transition: $property $time $function;
+}
