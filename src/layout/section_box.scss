@@ -1,0 +1,51 @@
+@use "../abstract/minxis" as layout_transitions;
+.main {
+  &__wrapper {
+    width: 100%;
+    height: calc(100vh - 14.75rem);
+    padding-inline: 3rem;
+    margin-top: 1.6rem;
+    position: relative;
+    @include layout_transitions.flex();
+  }
+  &__box {
+    width: 10rem;
+    height: 10rem;
+    background-color: #fbfbfb;
+    box-shadow: 0.5rem 0.5rem 0.4rem rgba(0, 0, 0, 0.166) inset,
+      -0.2rem -0.2rem 0.4rem rgba(0, 0, 0, 0.211) inset;
+    text-align: center;
+    line-height: 10rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+  }
+  &__subtitle {
+    width: 1px;
+    height: 1px;
+    top: 0;
+    left: 1000;
+    position: absolute;
+    overflow: hidden;
+  }
+  &__propertys {
+    max-width: 25rem;
+    @include layout_transitions.flex($flow: wrap);
+    position: absolute;
+    top: 1rem;
+    left: 10rem;
+    opacity: 0;
+    @include layout_transitions.transition(opacity, 0.2s);
+  }
+  &__change {
+    font-size: 1.5em;
+  }
+  &__description {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #dca500;
+  }
+}

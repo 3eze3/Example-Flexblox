@@ -1,0 +1,102 @@
+@use "../abstract/minxis" as layout_transitions;
+.main {
+  &__btn {
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    &--title {
+      width: max-content;
+      right: 8rem;
+      color: rgb(241, 251, 251);
+      font-size: 1.65em;
+      text-shadow: 0.1rem 0.1rem 0.2rem #000000;
+      font-weight: 600;
+    }
+    &--checkbox {
+      z-index: 60;
+      opacity: 0;
+
+      &:checked ~ .main__wrapper > .main__propertys {
+        opacity: 1;
+        @include layout_transitions.transition(opacity, 0.4s);
+      }
+      &:checked ~ .main__wrapper {
+        @include layout_transitions.flex(
+          $justify: space-between,
+          $direction: row
+        );
+      }
+
+      &:checked + .main__btn--line::after {
+        transform: rotate(-50deg);
+        -webkit-transform: rotate(-50deg);
+        -moz-transform: rotate(-50deg);
+        -ms-transform: rotate(-50deg);
+        -o-transform: rotate(-50deg);
+        @include layout_transitions.transition(transform, 0.5s);
+      }
+
+      &:checked + .main__btn--line::before {
+        transform: rotate(50deg);
+        -webkit-transform: rotate(50deg);
+        -moz-transform: rotate(50deg);
+        -ms-transform: rotate(50deg);
+        -o-transform: rotate(50deg);
+
+        @include layout_transitions.transition(transform, 0.5s);
+      }
+      &:checked + .main__btn--line {
+        background-color: transparent;
+        @include layout_transitions.transition(background-color, 0.4s);
+      }
+    }
+
+    &--line {
+      height: 0.6rem;
+      bottom: calc(3.5rem - 0.3rem);
+      background-color: #588;
+      border-radius: 0.3rem;
+      -webkit-border-radius: 0.3rem;
+      -moz-border-radius: 0.3rem;
+      -ms-border-radius: 0.3rem;
+      -o-border-radius: 0.3rem;
+      transition: background-color 0.4s ease;
+      -webkit-transition: background-color 0.3s ease;
+      -moz-transition: background-color 0.4s ease;
+      -ms-transition: background-color 0.4s ease;
+      -o-transition: background-color 0.4s ease;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        display: block;
+        background-color: #588;
+        width: 3rem;
+        height: 0.6rem;
+        border-radius: 0.3rem;
+        -webkit-border-radius: 0.3rem;
+        -moz-border-radius: 0.3rem;
+        -ms-border-radius: 0.3rem;
+        -o-border-radius: 0.3rem;
+        @include layout_transitions.transition(transform, 0.5s);
+      }
+      &::after {
+        transform: translateY(1.2rem);
+        -webkit-transform: translateY(1.2rem);
+        -moz-transform: translateY(1.2rem);
+        -ms-transform: translateY(1.2rem);
+        -o-transform: translateY(1.2rem);
+      }
+      &::before {
+        transform: translateY(-1.2rem);
+        -webkit-transform: translateY(-1.2rem);
+        -moz-transform: translateY(-1.2rem);
+        -ms-transform: translateY(-1.2rem);
+        -o-transform: translateY(-1.2rem);
+      }
+    }
+  }
+}
